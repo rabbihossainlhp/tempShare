@@ -46,7 +46,7 @@ export default function App() {
     }
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5011/temps/api/share_content", {
+      const res = await fetch("https://tempshare-e4md.onrender.com/temps/api/share_content", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password: sharePassword, content: shareContent }),
@@ -71,7 +71,7 @@ export default function App() {
     }
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:5011/temps/api/share_content?password=${encodeURIComponent(accessPassword)}`, { method: "GET" });
+      const res = await fetch(`https://tempshare-e4md.onrender.com/temps/api/share_content?password=${encodeURIComponent(accessPassword)}`, { method: "GET" });
 
       const data = await res.json();
       // console.log(data);
