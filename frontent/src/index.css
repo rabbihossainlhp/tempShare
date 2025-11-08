@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root{
+	--bg-grad-light: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
+	--bg-grad-dark: linear-gradient(135deg, #0f172a 0%, #071019 100%);
+	--primary: #3730a3; /* indigo-700 */
+	--muted: #64748b; /* gray-500 */
+	--card-bg: #ffffff;
+	--card-bg-dark: #0b1220;
+	--btn-primary-bg: #4f46e5;
+	--btn-primary-bg-hover: #4338ca;
+	--btn-accent-bg: #059669;
+	--btn-accent-bg-hover: #047857;
+	--text: #0f172a;
+	--text-dark: #cbd5e1;
+}
+
+.theme-light{
+	background: var(--bg-grad-light);
+	color: var(--text);
+}
+
+.theme-dark{
+	background: var(--bg-grad-dark);
+	color: var(--text-dark);
+}
+
+/* Ensure primary/muted text invert in dark mode for readability */
+.theme-dark .text-primary{ color: #c7d2fe; }
+.theme-dark .text-muted{ color: #94a3b8; }
+.theme-dark .heading{ color: var(--text-dark); }
+.theme-dark .lead{ color: #94a3b8; }
+.theme-dark a, .theme-dark .logo .text-primary, .theme-dark .navbar a{ color: #e6eef8; }
+.theme-dark .logo .text-primary{ color: #e6eef8; }
+
+/* Ensure small labels and toggle text are readable */
+.theme-dark .text-sm{ color: #dbeafe; }
+
+/* Buttons text color already white via variables, but ensure link/underline visibility */
+.theme-dark .underline{ text-decoration-color: rgba(255,255,255,0.35); }
+
+/* Ghost/inline button used for Back action */
+.btn-ghost{
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.45rem 0.7rem;
+	border-radius: 0.5rem;
+	color: var(--primary);
+	background: transparent;
+	border: 1px solid rgba(15,23,42,0.06);
+	transition: background 160ms ease, color 160ms ease, transform 120ms ease;
+}
+.btn-ghost:hover{ background: rgba(15,23,42,0.04); transform: translateY(-1px); }
+.btn-ghost svg{ stroke: currentColor; }
+.theme-dark .btn-ghost{ color: #e6eef8; border: 1px solid rgba(255,255,255,0.06); }
+.theme-dark .btn-ghost:hover{ background: rgba(255,255,255,0.04); }
+
+/* small icon button used inside inputs */
+.icon-btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background: transparent;
+	border: none;
+	color: inherit;
+	padding: 0;
+}
+.icon-btn:hover{ background: rgba(15,23,42,0.04); }
+.theme-dark .icon-btn:hover{ background: rgba(255,255,255,0.04); }
+.icon-btn svg{ display: block; }
+
+
+/* Navbar */
+.navbar{
+	background: rgba(255,255,255,0.6);
+	backdrop-filter: blur(6px);
+}
+.theme-dark .navbar{
+	background: rgba(3,7,18,0.6);
+}
+
+.logo .text-primary{ color: var(--primary); }
+.text-primary{ color: var(--primary); }
+.text-muted{ color: var(--muted); }
+
+.card{
+	background: var(--card-bg);
+}
+.card-dark{
+	background: var(--card-bg-dark);
+	color: var(--text-dark);
+}
+
+.btn-primary{
+	background: var(--btn-primary-bg);
+	color: white;
+	box-shadow: 0 6px 18px rgba(79,70,229,0.18);
+}
+.btn-primary:hover{ background: var(--btn-primary-bg-hover); }
+
+.btn-accent{
+	background: var(--btn-accent-bg);
+	color: white;
+	box-shadow: 0 6px 18px rgba(5,150,105,0.14);
+}
+.btn-accent:hover{ background: var(--btn-accent-bg-hover); }
+
+.footer{
+	background: rgba(255,255,255,0.5);
+}
+.theme-dark .footer{
+	background: rgba(3,7,18,0.6);
+}
+
+/* small transition helpers */
+.transition-theme{ transition: background-color 220ms ease, color 220ms ease; }
+.theme-toggle{ background: rgba(0,0,0,0.04); }
+.theme-dark .theme-toggle{ background: rgba(255,255,255,0.04); }
+
+/* make pre-wrap areas look nice */
+.whitespace-pre-wrap{ white-space: pre-wrap; }
+
+/* semantic helpers used in App */
+.heading{ color: var(--text); }
+.lead{ color: var(--muted); }
+.muted{ color: var(--muted); }
+.input{ background: rgba(255,255,255,0.9); border: 1px solid rgba(15,23,42,0.06); color: var(--text); }
+.theme-dark .input{ background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: var(--text-dark); }
+.input:focus{ box-shadow: 0 0 0 4px rgba(79,70,229,0.06); outline: none; }
+
+.access-box{ background: #f8fafc; color: var(--text); border: 1px solid rgba(15,23,42,0.04); }
+.theme-dark .access-box{ background: rgba(255,255,255,0.02); color: var(--text-dark); border: 1px solid rgba(255,255,255,0.04); }
+
+.msg-error{ color: #dc2626; }
+.theme-dark .msg-error{ color: #fca5a5; }
+
+.card{ padding: 1.5rem; border-radius: 1rem; }
+
